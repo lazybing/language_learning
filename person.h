@@ -1,3 +1,4 @@
+//class Person of the exercises section 12.1.1
 class Person{
     public:
         Person():Name("Bing Li"), Address("Mediatek"){}
