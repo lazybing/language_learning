@@ -28,10 +28,10 @@ int main(int argc, char **argv)
             << "2 for BrassPlus Account: ";
 
         while(cin >> kind && (kind != '1' && kind != '2'))
-            cout << "Enter either 1 or 2: ";
-        if(kind == '1')
+            cout << "Enter either 1 or 2 : ";
+        if(kind == '1'){
             p_clients[i] = new Brass(temp, tempnum, tempbal);
-        else{
+        }else{
             double tmax, trate;
             cout << "Enter the overdraft limit:$";
             cin >> tmax;
@@ -57,3 +57,4 @@ int main(int argc, char **argv)
     cout << "Done.\n";
     return 0;
 }
+

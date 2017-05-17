@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     Piggy.ViewAcct();
     cout << endl;
 
-    Hoggy.VideAcct();
+    Hoggy.ViewAcct();
     cout << endl;
 
     cout << "Depositiong $ 1000 into the Hoggy Account:\n";
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
     cout << "Piggy account  balance:$" << Piggy.Balance() << endl;
     cout << "Withdrawing $4200 from the Hoggy Account:\n";
     Hoggy.Withdraw(4200.00);
-    Hoggy.VideAcct();
+    Hoggy.ViewAcct();
 
     return 0;
 }

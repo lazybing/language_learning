@@ -24,8 +24,7 @@ void Brass::Deposit(double amt)
     if(amt < 0){
         cout << "Negative deposit not allowed;"
             << "deposit is cancelled.\n";
-    }
-    else{
+    }else{
         balance += amt;
     }
 }
@@ -83,7 +82,7 @@ BrassPlus::BrassPlus(const Brass &ba, double ml, double r)
 }
 
 //redefine how ViewAcct() works
-void BrassPlus::VideAcct() const
+void BrassPlus::ViewAcct() const
 {
     //set up ###.## format
     format initialState = setFormat();

@@ -19,7 +19,7 @@ class Brass
         void Deposit(double amt); //save money
         virtual void Withdraw(double amt); 
         double Balance() const;
-        void ViewAcct() const;
+        virtual void ViewAcct() const;
         virtual ~Brass(){}
 };
 
@@ -36,7 +36,7 @@ class BrassPlus:public Brass
                   double r = 0.11125);
         BrassPlus(const Brass &ba, double ml = 500,
                   double r = 0.11125);
-        void VideAcct() const;
+        virtual void ViewAcct() const;
         virtual void Withdraw(double amt); 
         void ResetMax(double m){maxLoan = m;}
         void ResetRate(double r){rate = r;}
