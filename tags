@@ -4,15 +4,30 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACCTABC_H_	acctabc.h	3;"	d
+AccNum	acctabc.h	/^        long AccNum() const {return acctNum;}$/;"	f	class:AcctABC
+AcctABC	acctABC.cpp	/^AcctABC::AcctABC(const string &s, long an, double bal)$/;"	f	class:AcctABC
+AcctABC	acctabc.h	/^class AcctABC$/;"	c
 Address	person.h	/^        std::string Address;$/;"	m	class:Person
 BRASS_H_	brass.h	3;"	d
+Balance	acctabc.h	/^        double Balance() const{return balance;}$/;"	f	class:AcctABC
 Balance	brass.cpp	/^double Brass::Balance() const$/;"	f	class:Brass
+Brass	acctabc.h	/^        Brass(const std::string &s = "Nullbody", long an = -1,$/;"	f	class:Brass
+Brass	acctabc.h	/^class Brass:public AcctABC$/;"	c
 Brass	brass.cpp	/^Brass::Brass(const string &s, long an, double bal)$/;"	f	class:Brass
 Brass	brass.h	/^class Brass$/;"	c
+BrassPlus	acctABC.cpp	/^BrassPlus::BrassPlus(const Brass &ba, double ml, double r)$/;"	f	class:BrassPlus
+BrassPlus	acctABC.cpp	/^BrassPlus::BrassPlus(const string &s, long an, double bal,$/;"	f	class:BrassPlus
+BrassPlus	acctabc.h	/^class BrassPlus:public AcctABC$/;"	c
 BrassPlus	brass.cpp	/^BrassPlus::BrassPlus(const Brass &ba, double ml, double r)$/;"	f	class:BrassPlus
 BrassPlus	brass.cpp	/^BrassPlus::BrassPlus(const string &s, long an, double bal,$/;"	f	class:BrassPlus
 BrassPlus	brass.h	/^class BrassPlus:public Brass$/;"	c
+CLIENTS	usebrass2.cpp	/^const int CLIENTS = 4;$/;"	v
+CLIENTS	usebrass3.cpp	/^const int CLIENTS = 4;$/;"	v
+Deposit	acctABC.cpp	/^void AcctABC::Deposit(double amt)$/;"	f	class:AcctABC
 Deposit	brass.cpp	/^void Brass::Deposit(double amt)$/;"	f	class:Brass
+Formatting	acctabc.h	/^        struct Formatting$/;"	s	class:AcctABC
+FullName	acctabc.h	/^        const std::string & FullName() const {return fullName;}$/;"	f	class:AcctABC
 Get_Address	person.h	/^        std::string Get_Address() const$/;"	f	class:Person
 Get_Name	person.h	/^        std::string Get_Name() const$/;"	f	class:Person
 HasTable	tabtenn0.h	/^        bool HasTable() const {return hasTable;};$/;"	f	class:TableTennisPlayer
@@ -28,15 +43,20 @@ RatedPlayer	tabtenn1.cpp	/^RatedPlayer::RatedPlayer(unsigned int r, const TableT
 RatedPlayer	tabtenn1.cpp	/^RatedPlayer::RatedPlayer(unsigned int r, const string &fn,$/;"	f	class:RatedPlayer
 RatedPlayer	tabtenn1.h	/^class RatedPlayer:public TableTennisPlayer$/;"	c
 Rating	tabtenn1.h	/^        unsigned int Rating() const{return rating;} \/\/add a method$/;"	f	class:RatedPlayer
+ResetMax	acctabc.h	/^        void ResetMax(double m){maxLoan = m;}$/;"	f	class:BrassPlus
 ResetMax	brass.h	/^        void ResetMax(double m){maxLoan = m;}$/;"	f	class:BrassPlus
+ResetOwes	acctabc.h	/^        void ResetOwes(){owesBank = 0;}$/;"	f	class:BrassPlus
 ResetOwes	brass.h	/^        void ResetOwes(){owesBank = 0;}$/;"	f	class:BrassPlus
+ResetRate	acctabc.h	/^        void ResetRate(double r){rate = r;}$/;"	f	class:BrassPlus
 ResetRate	brass.h	/^        void ResetRate(double r){rate = r;}$/;"	f	class:BrassPlus
 ResetRating	tabtenn1.h	/^        void ResetRating(unsigned int r){rating = r;} \/\/add a method$/;"	f	class:RatedPlayer
 ResetTable	tabtenn0.h	/^        void ResetTable(bool v){hasTable = v;};$/;"	f	class:TableTennisPlayer
 ResetTable	tabtenn1.h	/^        void ResetTable(bool v){hasTable = v;};$/;"	f	class:TableTennisPlayer
+Restore	acctABC.cpp	/^void AcctABC::Restore(Formatting &f) const$/;"	f	class:AcctABC
 Sales_item	sales.h	/^	Sales_item():units_sold(0), revenue(0, 0){}$/;"	f	class:Sales_item
 Sales_item	sales.h	/^class Sales_item{$/;"	c
 Screen	screen.h	/^class Screen{$/;"	c
+SetFormat	acctABC.cpp	/^AcctABC::Formatting AcctABC::SetFormat() const$/;"	f	class:AcctABC
 Set_Address	person.h	/^        void Set_Address(const std::string string)$/;"	f	class:Person
 Set_Name	person.h	/^        void Set_Name(const std::string string)$/;"	f	class:Person
 TABTENN0_H_	tabtenn0.h	2;"	d
@@ -45,13 +65,20 @@ TableTennisPlayer	tabtenn0.cpp	/^TableTennisPlayer::TableTennisPlayer(const stri
 TableTennisPlayer	tabtenn0.h	/^class TableTennisPlayer$/;"	c
 TableTennisPlayer	tabtenn1.cpp	/^TableTennisPlayer::TableTennisPlayer(const string &fn, $/;"	f	class:TableTennisPlayer
 TableTennisPlayer	tabtenn1.h	/^class TableTennisPlayer$/;"	c
-VideAcct	brass.cpp	/^void BrassPlus::VideAcct() const$/;"	f	class:BrassPlus
-ViewAcct	brass.cpp	/^Brass::ViewAcct() const$/;"	f	class:Brass
+ViewAcct	acctABC.cpp	/^void Brass::ViewAcct() const$/;"	f	class:Brass
+ViewAcct	acctABC.cpp	/^void BrassPlus::ViewAcct() const$/;"	f	class:BrassPlus
+ViewAcct	brass.cpp	/^void Brass::ViewAcct() const$/;"	f	class:Brass
+ViewAcct	brass.cpp	/^void BrassPlus::ViewAcct() const$/;"	f	class:BrassPlus
+Withdraw	acctABC.cpp	/^void AcctABC::Withdraw(double amt)$/;"	f	class:AcctABC
+Withdraw	acctABC.cpp	/^void Brass::Withdraw(double amt) const$/;"	f	class:Brass
+Withdraw	acctABC.cpp	/^void BrassPlus::Withdraw(double amt)$/;"	f	class:BrassPlus
 Withdraw	brass.cpp	/^void Brass::Withdraw(double amt)$/;"	f	class:Brass
 Withdraw	brass.cpp	/^void BrassPlus::Withdraw(double amt)$/;"	f	class:BrassPlus
 access_ctr	screen.h	/^        mutable size_t access_ctr;  \/\/may change in a const members$/;"	m	class:Screen
+acctNum	acctabc.h	/^        long acctNum;$/;"	m	class:AcctABC
 acctNum	brass.h	/^        long acctNum;$/;"	m	class:Brass
 avg_price	sales.h	/^double Sales_item::avg_price() const$/;"	f	class:Sales_item
+balance	acctabc.h	/^        double balance;$/;"	m	class:AcctABC
 balance	brass.h	/^        double balance;$/;"	m	class:Brass
 book	Item_Base.cpp	/^        std::string book() const{returen isbn;}$/;"	f	class:Item_base
 contents	screen.h	/^        std::string contents;$/;"	m	class:Screen
@@ -62,7 +89,9 @@ do_display	screen.h	/^        void do_display(std::ostream &os) const$/;"	f	clas
 do_display	screen.h	/^void Screen::do_display(std::ostream& os) const$/;"	f	class:Screen
 firstname	tabtenn0.h	/^        string firstname;$/;"	m	class:TableTennisPlayer
 firstname	tabtenn1.h	/^        string firstname;$/;"	m	class:TableTennisPlayer
+flag	acctabc.h	/^            std::ios_base::fmtflags flag;$/;"	m	struct:AcctABC::Formatting
 format	brass.cpp	/^typedef std::ios_base::fmtflags format;$/;"	t	file:
+fullName	acctabc.h	/^        std::string fullName;$/;"	m	class:AcctABC
 fullName	brass.h	/^        std::string fullName;$/;"	m	class:Brass
 get	screen.h	/^        char get() const{return contents[cursor];}$/;"	f	class:Screen
 get	screen.h	/^char Screen::get(index r, index c) const$/;"	f	class:Screen
@@ -75,14 +104,20 @@ isbn	sales.h	/^	std::string isbn;$/;"	m	class:Sales_item
 lastname	tabtenn0.h	/^        string lastname;$/;"	m	class:TableTennisPlayer
 lastname	tabtenn1.h	/^        string lastname;$/;"	m	class:TableTennisPlayer
 main	usebrass1.cpp	/^int main(int argc, char **argv)$/;"	f
+main	usebrass2.cpp	/^int main(int argc, char **argv)$/;"	f
+main	usebrass3.cpp	/^int main(int argc, char **argv)$/;"	f
 main	usett0.cpp	/^int main(void)$/;"	f
 main	usett1.cpp	/^int main(int argc, char **argv)$/;"	f
+maxLoan	acctabc.h	/^        double maxLoan;$/;"	m	class:BrassPlus
 maxLoan	brass.h	/^        double maxLoan;$/;"	m	class:BrassPlus
 move	screen.h	/^Screen& Screen::move(index r, index c)$/;"	f	class:Screen
 net_price	Item_Base.cpp	/^        virtual double net_price(std::size_t n) const$/;"	f	class:Item_base
+owesBank	acctabc.h	/^        double owesBank;$/;"	m	class:BrassPlus
 owesBank	brass.h	/^        double owesBank;$/;"	m	class:BrassPlus
+pr	acctabc.h	/^            std::streamsize pr;$/;"	m	struct:AcctABC::Formatting
 precis	brass.cpp	/^typedef std::streamsize precis;$/;"	t	file:
 price	Item_Base.cpp	/^        double price;$/;"	m	class:Item_base	file:
+rate	acctabc.h	/^        double rate;$/;"	m	class:BrassPlus
 rate	brass.h	/^        double rate;$/;"	m	class:BrassPlus
 rating	tabtenn1.h	/^        unsigned int rating; \/\/add a data member$/;"	m	class:RatedPlayer
 restore	brass.cpp	/^void restore(format f, precis p)$/;"	f
@@ -93,5 +128,7 @@ set	screen.h	/^Screen& Screen::set(char c)$/;"	f	class:Screen
 setFormat	brass.cpp	/^format setFormat()$/;"	f
 units_sold	sales.h	/^	unsigned units_sold;$/;"	m	class:Sales_item
 width	screen.h	/^        index height, width;$/;"	m	class:Screen
+~AcctABC	acctabc.h	/^        virtual ~AcctABC(){}$/;"	f	class:AcctABC
+~Brass	acctabc.h	/^        virtual ~Brass(){}$/;"	f	class:Brass
 ~Brass	brass.h	/^        virtual ~Brass(){}$/;"	f	class:Brass
 ~Item_base	Item_Base.cpp	/^        virtual ~Item_base() {}$/;"	f	class:Item_base
