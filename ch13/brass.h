@@ -4,7 +4,7 @@
 #include <string>
 
 // Brass Account Class
-Class Brass
+class Brass
 {
     private:
         std::string fullName;
