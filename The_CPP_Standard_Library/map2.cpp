@@ -34,4 +34,21 @@ int main()
         pos->second *= 2;
     }
 
+    //print all elements
+    for (pos = stocks.begin(); pos != stocks.end(); ++pos) {
+        cout << "stock: " << setw(12) << pos->first
+            << "price: " << pos->second << endl;
+    }
+    cout << endl;
+
+    //rename key from "VW" to "Volkswagen"
+    //-provided only be exchanging element
+    stocks["Volkswagen"] = stocks["VW"];
+    stocks.erase("VW");
+
+    //print all elements
+    for (pos = stocks.begin(); pos != stocks.end(); ++pos) {
+        cout << "stock: " << setw(12) << pos->first
+            << "price: " << pos->second << endl;
+    }
 }
