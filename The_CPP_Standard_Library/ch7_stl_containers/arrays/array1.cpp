@@ -10,11 +10,16 @@ int main()
 {
     //create array with 10 ints
     array<int, 10> a = {11, 22, 33, 44};
+    array<int, 10> b(a);
+    array<int, 10> c = a;
 
     PRINT_ELEMENTS(a);
+    PRINT_ELEMENTS(b);
+    PRINT_ELEMENTS(c);
 
     //modify last two elements
     a.back() = 9999999;
+    a.front() = 3;
     a[a.size() - 2] = 42;
     PRINT_ELEMENTS(a);
 
