@@ -1,0 +1,81 @@
+A vector copies its elements into its internal dynamic array. Vectors provide
+good performance if you append or delete elements at the end. If you insert or
+delete in the middle or at the beginning, performance get worse.
+
+1. Size and Capacity
+
+Vectors provide the usual size operations size(), empty(), and max_size().An 
+additional "size" operation is the capacity() function, which returns the number
+of elements a vector could contain in its actual memory.
+
+std::vector<int> v;     //create an empty vector
+v.reserve(80);          //reserve memory for 80 elements
+std::vector<T> v(5);    //creates a vector and initializes it with five vlues
+
+vector<Elem> c;           | Default constructor; creates an empty vector without any elements
+vector<Elem> c(c2);       | Copy constructor; creates a new vector as a copy of c2
+vector<Elem> c = c2;      | Copy constructor; creates a new vector as a copy of c2
+vector<Elem> c(n);        | Creates a vector with n elements created by the default constructor
+vector<Elem> c(n, elem);  | Creates a vector initialized with n copies of element elem
+vector<Elem> c(beg, end); | Creates a vector initialized with the elements of the range [beg, end)
+vector<Elem> c(initlist); | Creates a vector initialized with the elements of initializer list initlist
+vector<Elem> c = initlist;| Creates a vector initialized with the elements of initializer list initlist
+c.~vector();              | Destorys all elements and frees the memory
+
+2. Create, Copy and Destroy
+
+Nonmodifying Operations
+c.empty();          | Returns whether the container is empty
+c.size();           | Returns the current number of elements
+c.max_size();       | Returns the maximum number of elements possible
+c.capacity();       | Returns the maximum possible number of elements without reallocation
+c.reserve(num);     | Enlarges capcacity, if not enough yet
+c.shrink_to_fit();  | Request to reduce capacity to fit number of elements
+c1 == c2;           | Returns whether c1 is equal to c2
+c1 != c2;           | Returns whether c1 is not equal to c2
+c1 < c2;            | Returns whether c1 is less than c2
+c1 > c2;            | Returns whether c1 is greater than c2
+c1 <= c2;           | Returns whether c1 is less than or equal to c2
+c1 >= c2;           | Returns whether c1 is greater than or equal to c2
+
+Assignments
+c = c2;             | Assigns all elements of c2 to c
+c = initlist;       | Assigns all elements of the initializer list initlist to c
+c.assign(n, elem);  | Assigns n copies of element elem
+c.assign(beg, end); | Assigns the elements of the range [beg, end)
+c.assign(initlist); | Assigns all the elements of the initializer list initlist
+c1.swap(c2);        | Swaps the data of c1 and c2
+swap(c1, c2);       | Swaps the data of c1 and c2
+
+Element Access(only at() perform range checking)
+c[idx];             | Returns ehe element with index idx(no range cheking)
+c.at(idx);          | Returns the element with index idx(throws range-error exception if idx is out of range)
+c.front();          | Returns the first element(no check whether a first element exists)
+c.back();           | Returns the last element(no check whether a last element exists)
+
+Iterator Functions
+c.begin();          | Returns a random-access iterator for the first element
+c.end();            | Returns a random-access iterator for the position after the last element
+c.cbegin();         | Returns a constant random-access iterator for the first element
+c.cend();           | Returns a constant random-access iterator for the position after the last element
+c.rbegin();         | Returns a reverse iterator for the first element of a reverse iteration
+c.rend();           | Returns a reverse iterator for the position after the last element of a reverse iteration
+c.crbegin();        | Returns a constant reverse iterator for the first element of a reverse iteration
+c.crend();          | Returns a constant reverse iterator for the position after the last element of a reverse iteration
+
+Inserting and Removing Elements
+c.push_back(elem);      | Appends a copy of elem at the end
+c.pop_back();           | Removes the last element(does not return it)
+c.insert(pos, elem);    | Inserts a copy of elem before iterator position pos and returns the position of the new element
+c.insert(pos, n, elem); | Inserts a copy of elem before iterator position pos and returns the position of the first new element
+c.insert(pos, beg, end);| Inserts a copy of all elements of the range[beg, end) before iterator position pos and returns the position of the first new element
+c.insert(pos, initlist);|
+c.emplace(pos, args...);
+c.emplace_back(args..);
+c.erase(pos);           | Removes the element at iterator position pos and returns the position of the next element
+c.erase(beg, end);      | Removes all element of the range [beg, end) and returns the position of the next element
+c.resize(num);          | Changes the number of elements to num (if size() grows new elements are created by their default constructor)
+c.resize(num, elem);    | Changes the number of elements to num (if size() grows new elements are copies of elem)
+c.clear();              | Removes all elements(empties the container)
+
+
