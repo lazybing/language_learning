@@ -1,0 +1,60 @@
+A list differs in several major ways from arrays, vectors, and deques:
+1. A list does not provide random access.
+2. Inserting and removing elements is fast at each position, and not only at one or both ends.
+3. Inserting and deleting elements does not invalidate pointers, references, and iterators to other elements.
+
+Create Copy and Destroy
+list<Elem> c;           | Default constructor; creates an empty list without andy elements.
+list<Elem> c(c2);       | Default constructor; creates a new list as a copy of c2
+list<Elem> c = c2;      | Default constructor; creates a new list as a copy of c2
+list<Elem> c(n, elem);  | Creates a list initialized with n copies of element elem
+list<Elem> c(beg, end); | Creates a list initialized with the elements of the range [beg, end)
+list<Elem> c(initlist); | Creates a list initialized with the elements of initializer list
+list<Elem> c = initlist;| Creates a list initialized with the elements of initializer list
+c.~list();              | Destroys all elements and frees the memory
+
+Nonmodifying Operations
+c.empty();              | Returns whether the container is empty
+c.size();               | Returns the current number of elements
+c.max_size();           | Returns the maximum number of elements possible
+c1 == c2;               | Returns whether c1 is equal to c2
+c1 != c2;               | Returns whether c1 is not equal to c2
+c1 < c2;                | Returns whether c1 is less than c2
+c1 > c2;                | Returns whether c1 is greater than c2
+c1 <= c2;               | Returns whether c1 is less than or equal to c2
+c1 >= c2;               | Returns whether c1 is greater than or equal to c2
+
+Assginments
+c = c2;             | Assigns all elements of c2 to c
+c = initlist;       | Assigns all elements of the initializer list initlist to c
+c.assign(n, elem);  | Assigns n copies of element elem
+c.assign(beg, end); | Assigns the elements of the range [beg, end)
+c.assign(initlist); | Assigns all the elements of the initializer list initlist
+c1.swap(c2);        | Swaps the data of c1 and c2
+swap(c1, c2);       | Swaps the data of c1 and c2
+
+Element Access
+c.front();          | Returns the first element
+c.end();            | Returns the last  element
+
+Iterator Functions
+c.begin();      | Returns a bidirectional iterator for the first element
+c.end();        | Returns a bidirectional iterator for the position after the last element
+c.cbegin();     | Returns a constant bidirectional iterator for the first element
+c.cend();       | Returns a constant bidirectional iterator for the position after the last element
+
+Inserting and Removing Elements
+c.push_back(elem);      | Appends a copy of elem at the end
+c.pop_back();           | Removes the last element
+c.push_front(elem);     | Insert a copy of elem at the beginning
+c.pop_front();          | Removes the first element
+c.insert(pos, elem);    | Inserts a copy of elem before iterator position pos and returns the position of the new element
+c.insert(pos, n, elem); | Inserts a copy of elem before iterator position pos and returns the position of the first new element
+c.insert(pos, beg, end);| Inserts a copy of all elements of the range [beg, end) before iterator position pos and returns the position of the first new element
+c.insert(pos, initlist);| Inserts a copy of all elements of the initializer list initlist before iterator position pos and returns the position of the first new element
+c.erase(pos);           | Removes the element at iterator position pos and returns the position of the next element
+c.erase(beg, end);      | Removes all elements of the range [beg, end) and returns the position of the next element
+c.remove(val);          | Removes all elements with value val
+c.remove_if(op);        | Removes all elements for which op(elem) yields true
+c.clear();              | Removes all elements
+
