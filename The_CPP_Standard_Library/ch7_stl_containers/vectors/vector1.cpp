@@ -12,14 +12,18 @@ int main()
 
     //reserve memory for five elements to avoid reallocation
     sentence.reserve(5);
+    cout << "sentence size " << sentence.size() << endl;
 
     //append some elements
     sentence.push_back("Hello,");
+    sentence.push_back("libing,");
     sentence.insert(sentence.end(), {"how", "are", "you", "?"});
 
     //print elements separated with spaces
-    copy(sentence.cbegin(), sentence.cend(),
-         ostream_iterator<string>(cout, " "));
+    //copy(sentence.cbegin(), sentence.cend(),
+         //ostream_iterator<string>(cout, " "));
+    for (auto it = sentence.cbegin(); it != sentence.cend(); it++)
+        cout << *it << " ";
     cout << endl;
 
     //print "technical data"
@@ -29,6 +33,10 @@ int main()
 
     //swap second and fourth element
     swap(sentence[1], sentence[3]);
+
+    for (auto it = sentence.cbegin(); it != sentence.cend(); it++)
+        cout << *it << " ";
+    cout << endl;
 
     //insert element "always" before element "?"
     sentence.insert(find(sentence.begin(), sentence.end(), "?"),
