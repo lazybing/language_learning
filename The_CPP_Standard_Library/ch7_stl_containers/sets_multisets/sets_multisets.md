@@ -4,6 +4,7 @@ balanced binary trees.
 
 Create Copy and Destroy
 set may be one of the following types:
+
 | set               | Effect |
 | :----------------:| :-----:|
 | set<Elem>           | A set that by default worts with less<> |
@@ -37,6 +38,7 @@ Nonmodifying Operations
 | c2 >= c2     | Returns whether c1 is greater than or equal to c2 |
 
 Special Search Operations
+
 | Operation | Effect |
 | :-------: | :----: |
 | c.count(val) | Returns the number of elements with value val |
@@ -46,6 +48,7 @@ Special Search Operations
 | c.equal_range(val) | Returns a range with all elements with a value equal to val |
 
 Assignments
+
 | Operation | Effect |
 | :-------: | :----: |
 | c = c2 | Assigns all elements of c2 to c |
@@ -55,6 +58,7 @@ Assignments
 | swap(c1, c2) | Swaps the data of c1 and c2 |
 
 Iterator Functions
+
 | Operation | Effect |
 | :-------: | :----: |
 | c.begin() | Returns a bidirectional iterator for the first element |
@@ -63,6 +67,7 @@ Iterator Functions
 | c.cend()  | Returns a constant bidirectional iterator for the position after the last element |
 
 Inserting and Removing Elements
+
 | Operation | Effect |
 | :-------: | :----: |
 | c.insert(val) | Inserts a copy val and returns the position of the new element |
@@ -71,7 +76,4 @@ Inserting and Removing Elements
 | c.insert(initlist) | Inserts a copy of all elements in the initializer list initlist |
 | c.erase(val)       | Removes all elements equal to val and returns the number of removed elements |
 | c.erase(pos)       | Removes the element at iterator position pos and returns the following |
-
-
-
 
