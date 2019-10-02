@@ -25,7 +25,7 @@ int main(int argc, char **argv)
             }
 
             //print characters in reverse order
-            for (int i = endIdx - 1; i >= static_cast<int>(begIdx); i++) {
+            for (int i = endIdx - 1; i >= static_cast<int>(begIdx); --i) {
                 cout << line[i];
             }
             cout << ' ';
